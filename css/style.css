@@ -1,9 +1,7 @@
 /* change these */
 
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400italic,800italic,400,800");
-/* @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap'); */
-@import url("https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic");
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Poppins&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -14,14 +12,11 @@ use the fonts in other ways in the font hierarchy etc. */
 
 /* change these */
 :root {
-  --bg-color: red;
-  --link-color: green;
-  --link-hover-color: blue;
-  --color-4: hotpink;
-  --color-5: rebeccapurple;
-
-  --primary-font: "Open Sans", sans-serif;
-  --secondary-font: "Droid Serif", serif;
+  --bg-color: #f2f2f2;
+  --link-color: #bacbd9;
+  --link-hover-color: #575923;
+  --primary-font: "Poppins", sans-serif;
+  --secondary-font: "Montserrat", sans-serif;
   --main-text-color: #000;
 
   --white-space: 1rem;
@@ -30,21 +25,30 @@ use the fonts in other ways in the font hierarchy etc. */
 button {
   transition: all 3s;
 }
-a {
-  transition: all 3s;
-}
+
 button:hover {
   background-color: var(--link-hover-color);
-  transform: scale(3) rotate(40deg);
+  animation-name: pulse;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
 }
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
 
+  50% {
+    transform: scale(1.1, 1.1);
+  }
+}
 button:active {
   background-color: var(--bg-color);
 }
 
 a:hover {
-  color: var(--link-hover-color);
-  font-size: 4rem;
+  color: #575923;
+  text-decoration: underline;
 }
 html {
   font-size: 100%;
@@ -65,7 +69,7 @@ footer {
 }
 
 .full-width {
-  background: var(--bg-color);
+  background: var(--link-hover-color);
   color: white;
   width: 100%;
 }
@@ -76,12 +80,12 @@ footer {
   letter-spacing: -2px;
   padding-right: 0.75em;
   font-weight: bold;
-  color: white;
+  color: black;
 }
 
 .header-wrapper h2 {
   font-size: 1.6em;
-  color: rgba(255, 255, 255, 0.95);
+  color: black;
   font-weight: bold;
   margin: var(--white-space) 0;
 }
@@ -89,10 +93,12 @@ footer {
 .header-wrapper h3 {
   font-size: 1.2rem;
   font-style: italic;
+  color: #000;
 }
 
 .header-wrapper h4 {
   font-size: 0.8rem;
+  color: #000;
 }
 
 main {
@@ -146,56 +152,77 @@ ul li:last-child {
 }
 
 .textures li {
-  height: 30vw;
-  width: 40%;
+  height: 50%;
+  width: 50%;
   margin-right: 5vw;
-}
-
-.texture-swatch-1 {
-  background: url(../img/pw_maze_white.png) top left repeat;
-}
-
-.texture-swatch-2 {
-  background: url(../img/subtle_grunge.png) top left repeat;
-}
-
-.texture-swatch-1 {
-  background: url(../img/pw_maze_white.png) top left repeat;
-}
-
-.texture-swatch-3 {
-  background: url(../img/white_paperboard.png) top left repeat;
+  text-align: center;
 }
 
 .images ul {
   flex-direction: column;
   text-align: center;
+  height: 100%;
+  width: 100%;
 }
 
 .images li {
   display: block;
   /*margin-right: 5vw;*/
   margin-bottom: 1rem;
+  width: 100%;
+  height: 100%;
+}
+.article-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 0.2em solid black;
+  width: 750px;
+  padding: 20px;
+  font-family: var(--primary-font);
+}
+
+#cph-img {
+  width: 130%;
+  height: 130%;
+}
+.description {
+  margin-left: 40px;
+}
+.article-container h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: var(--primary-font);
+}
+.article-container p {
+  font-style: italic;
+  font-size: 1rem;
+  color: #000;
+  margin: 0.5rem 0;
+}
+.text {
+  font-family: var(--secondary-font);
+  color: #000;
 }
 
 button {
   padding: 1rem;
   border-radius: 4px;
-  background: var(--link-color);
+  background: var(--bg-color);
   text-align: center;
   text-decoration: none;
   font: bold 1.25em/1 var(--primary-font);
   letter-spacing: 1px;
-  color: white;
+  color: black;
   text-transform: uppercase;
-  text-shadow: 0px -1px 0px #0374a0;
+  text-shadow: 0px -1px 0px #bacbd9;
   transition: all 0.2s ease;
   cursor: pointer;
   margin: 0 1rem 1rem 0;
+  border-radius: 40%;
 }
 
 .secondary-button {
-  background: var(--color-5);
+  background: var(--bg-color);
 }
 
 button:focus,
@@ -239,7 +266,6 @@ a {
   color: var(--link-color);
   font-weight: bold;
   text-decoration: none;
-  transition: all 0.2s;
 }
 
 p[class*="font-details-"] {
@@ -277,7 +303,7 @@ footer {
   }
 
   .textures li {
-    height: 15vw;
+    height: 10%;
   }
 }
 
